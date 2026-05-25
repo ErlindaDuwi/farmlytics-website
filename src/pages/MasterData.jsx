@@ -3,9 +3,10 @@ import axios from "axios";
 import { Trash2, Search, Eye, X } from "lucide-react"; // ✅ Tambahkan icon Eye dan X
 
 // 🔥 PENTING: PASTIKAN IP SAMA DENGAN FLASK KAMU
-const API_URL = "http://10.111.10.140:5000/history"; 
-const DELETE_URL = "http://10.111.10.140:5000/delete_data"; 
-const BASE_URL = "http://10.111.10.140:5000";
+
+const API_URL = "http://10.58.180.16:5000/history"; 
+const DELETE_URL = "http://10.58.180.16:5000/delete_data"; 
+const BASE_URL = "http://10.58.180.16:5000";
 
 export default function MasterData() {
   const [data, setData] = useState([]);
