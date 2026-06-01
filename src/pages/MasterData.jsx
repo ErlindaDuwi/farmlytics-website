@@ -4,9 +4,9 @@ import { Trash2, Search, Eye, X } from "lucide-react"; // ✅ Tambahkan icon Eye
 
 // 🔥 PENTING: PASTIKAN IP SAMA DENGAN FLASK KAMU
 
-const API_URL = "http://10.58.180.16:5000/history"; 
-const DELETE_URL = "http://10.58.180.16:5000/delete_data"; 
-const BASE_URL = "http://10.58.180.16:5000";
+const API_URL = "http://192.168.1.9:5000/history"; 
+const DELETE_URL = "http://192.168.1.9:5000/delete_data"; 
+const BASE_URL = "http://192.168.1.9:5000";
 
 export default function MasterData() {
   const [data, setData] = useState([]);

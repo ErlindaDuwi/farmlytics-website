@@ -22,7 +22,7 @@ export default function Login({ setIsLogin }) {
 
     try {
       // ================= REQUEST KE FLASK =================
-      const response = await fetch("http://10.111.10.140:5000/login", {
+      const response = await fetch("http://192.168.1.9:5000/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
