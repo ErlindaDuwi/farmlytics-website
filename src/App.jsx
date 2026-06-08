@@ -6,6 +6,19 @@ import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import MasterData from "./pages/MasterData";
 import AuditLog from "./pages/AuditLog";
+import DashboardPublic from "./pages/DashboardPublic";
+
+function ProtectedRoute({ children }) {
+  const isAuthenticated =
+    localStorage.getItem("login") === "true";
+
+  if (!isAuthenticated) {
+    alert("Silakan login terlebih dahulu");
+    return <Navigate to="/" replace />;
+  }
+
+  return children;
+}
 
 export default function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -19,17 +32,21 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* LOGIN */}
-        <Route path="/" element={<Login setIsLogin={setIsLogin} />} />
+        <Route path="/" element={<DashboardPublic />} />
 
-        {/* DASHBOARD + CHILD */}
+        {/* LOGIN */}
+        <Route
+          path="/login"
+          element={<Login setIsLogin={setIsLogin} />}
+        />
+
+        {/* DASHBOARD ADMIN*/}
         <Route
           path="/dashboard"
           element={
-            isLogin ? (
+            <ProtectedRoute>
               <Dashboard setIsLogin={setIsLogin} />
-            ) : (
-              <Navigate to="/" />
-            )
+            </ProtectedRoute>
           }
         >
           {/* 🔥 INI ISI HALAMAN */}

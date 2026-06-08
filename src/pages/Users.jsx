@@ -3,8 +3,8 @@ import axios from "axios";
 import { Pencil, Trash2, Plus, Search, Eye, EyeOff } from "lucide-react";
 
 // 🔥 PENTING: PASTIKAN IP INI SAMA DENGAN FLASK KAMU
-const API_URL = "http://192.168.1.9:5000/api/users";
-const BASE_URL = "http://192.168.1.9:5000"; // Untuk memuat gambar foto
+const API_URL = "http://10.220.97.182:5000/api/users";
+const BASE_URL = "http://10.220.97.182:5000"; // Untuk memuat gambar foto
 
 export default function Users() {
   const [users, setUsers] = useState([]);
